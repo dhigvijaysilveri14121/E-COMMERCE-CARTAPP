@@ -1,12 +1,26 @@
-import { Container, Typography } from '@mui/material'
-import React from 'react'
+import { Grid, Typography } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import React from "react";
+import "../App.css";
+import { Badge } from "@mui/material";
 
 const Header = () => {
   return (
-    <Container>
-      <Typography>Cart-App</Typography>
-    </Container>
-  )
-}
+    <Grid
+      container
+      justifyContent={"space-between"}
+      className="Header-container"
+      sx={{ width: "100%" }}
+    >
+      <Grid item className="header-objects" lg={12}>
+        <Typography>Home</Typography>
+      </Grid>
 
-export default Header
+      <Badge badgeContent={4} color="primary">
+        <ShoppingCartIcon sx={{ color: "white" }} />
+      </Badge>
+    </Grid>
+  );
+};
+
+export default Header;
